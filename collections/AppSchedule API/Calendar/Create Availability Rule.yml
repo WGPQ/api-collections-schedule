@@ -1,0 +1,16 @@
+name: Create Availability Rule
+description: Crear regla de disponibilidad.
+request:
+  method: POST
+  path: /api/calendar/availability-rules
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+    Content-Type: application/json
+  body:
+    responsibleUserId: 00000000-0000-0000-0000-000000000000
+    dayOfWeek: Monday
+    startTime: "09:00:00"
+    endTime: "17:00:00"
+responses:
+  success: 200

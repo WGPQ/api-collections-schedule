@@ -1,0 +1,9 @@
+name: Me
+description: Obtener perfil del usuario autenticado.
+request:
+  method: GET
+  path: /api/auth/me
+  headers:
+    Authorization: Bearer {{accessToken}}
+responses:
+  success: 200

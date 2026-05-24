@@ -1,0 +1,16 @@
+name: List Events
+description: Obtener eventos de agenda por rango.
+request:
+  method: GET
+  path: /api/calendar/events
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+  query:
+    fromUtc: "2026-05-24T00:00:00Z"
+    toUtc: "2026-05-31T00:00:00Z"
+    responsibleUserId: ""
+    clientId: ""
+    type: ""
+responses:
+  success: 200

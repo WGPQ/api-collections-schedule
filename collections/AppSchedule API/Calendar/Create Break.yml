@@ -1,0 +1,19 @@
+name: Create Break
+description: Crear break.
+request:
+  method: POST
+  path: /api/calendar/breaks
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+    Content-Type: application/json
+  body:
+    responsibleUserId: 00000000-0000-0000-0000-000000000000
+    title: Almuerzo
+    notes: Break interno
+    startAtUtc: "2026-05-24T18:00:00Z"
+    endAtUtc: "2026-05-24T19:00:00Z"
+    timeZone: America/Guayaquil
+    color: "#f59e0b"
+responses:
+  success: 200

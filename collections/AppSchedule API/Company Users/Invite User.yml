@@ -1,0 +1,14 @@
+name: Invite User
+description: Invitar usuario a la empresa activa.
+request:
+  method: POST
+  path: /api/company-users/invitations
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+    Content-Type: application/json
+  body:
+    email: staff@example.com
+    role: Staff
+responses:
+  success: 200

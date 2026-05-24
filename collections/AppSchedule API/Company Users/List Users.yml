@@ -1,0 +1,10 @@
+name: List Users
+description: Obtener usuarios de la empresa activa.
+request:
+  method: GET
+  path: /api/company-users
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+responses:
+  success: 200

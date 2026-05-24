@@ -1,0 +1,12 @@
+name: Local
+variables:
+  baseUrl: http://localhost:5251
+  accessToken: ""
+  companyId: ""
+  clientId: ""
+  appointmentId: ""
+  breakId: ""
+  internalBlockId: ""
+  ruleId: ""
+  companyUserId: ""
+  invitationToken: ""

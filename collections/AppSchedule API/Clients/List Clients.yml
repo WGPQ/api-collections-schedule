@@ -1,0 +1,12 @@
+name: List Clients
+description: Buscar/listar clientes por empresa.
+request:
+  method: GET
+  path: /api/clients
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+  query:
+    q: ""
+responses:
+  success: 200

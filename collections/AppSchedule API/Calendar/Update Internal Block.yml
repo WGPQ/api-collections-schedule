@@ -1,0 +1,19 @@
+name: Update Internal Block
+description: Actualizar bloqueo interno.
+request:
+  method: PUT
+  path: /api/calendar/internal-blocks/{{internalBlockId}}
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+    Content-Type: application/json
+  body:
+    responsibleUserId: 00000000-0000-0000-0000-000000000000
+    title: Reunión interna actualizada
+    notes: Horario bloqueado
+    startAtUtc: "2026-05-24T20:30:00Z"
+    endAtUtc: "2026-05-24T21:30:00Z"
+    timeZone: America/Guayaquil
+    color: "#ef4444"
+responses:
+  success: 200

@@ -1,0 +1,14 @@
+name: Update Company
+description: Actualizar empresa activa.
+request:
+  method: PUT
+  path: /api/companies/{{companyId}}
+  headers:
+    Authorization: Bearer {{accessToken}}
+    X-Company-Id: "{{companyId}}"
+    Content-Type: application/json
+  body:
+    name: Mi Empresa Actualizada
+    isActive: true
+responses:
+  success: 200

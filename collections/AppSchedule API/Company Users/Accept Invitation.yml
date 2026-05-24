@@ -1,0 +1,9 @@
+name: Accept Invitation
+description: Aceptar invitación autenticado con token.
+request:
+  method: POST
+  path: /api/company-invitations/{{invitationToken}}/accept
+  headers:
+    Authorization: Bearer {{accessToken}}
+responses:
+  success: 204
