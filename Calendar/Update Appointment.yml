@@ -4,7 +4,7 @@ info:
   seq: 5
 
 http:
-  method: PUT
+  method: PATCH
   url: '{{baseUrl}}/api/calendar/appointments/{{appointmentId}}'
   headers:
     - name: Authorization

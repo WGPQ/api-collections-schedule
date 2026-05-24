@@ -2,56 +2,23 @@ name: local
 variables:
   - name: baseUrl
     value: http://localhost:5251
-    enabled: true
-    secret: false
-    type: text
-  - name: accessToken
-    value: ""
-    enabled: true
-    secret: true
-    type: text
+  - secret: true
+    name: accessToken
   - name: companyId
-    value: ""
-    enabled: true
-    secret: false
-    type: text
+    value: eff8a9d6-a28b-4d38-b8f5-ea041c7bd401
   - name: clientId
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: appointmentId
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: breakId
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: internalBlockId
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: ruleId
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: companyUserId
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: invitationToken
     value: ""
-    enabled: true
-    secret: false
-    type: text
   - name: responsibleUserId
     value: ""
-    enabled: true
-    secret: false
-    type: text

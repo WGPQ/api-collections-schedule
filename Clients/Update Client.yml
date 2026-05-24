@@ -5,12 +5,12 @@ info:
 
 http:
   method: PUT
-  url: '{{baseUrl}}/api/clients/{{clientId}}'
+  url: "{{baseUrl}}/api/clients/{{clientId}}"
   headers:
     - name: Authorization
       value: Bearer {{accessToken}}
     - name: X-Company-Id
-      value: '{{companyId}}'
+      value: "{{companyId}}"
     - name: Content-Type
       value: application/json
   body:
@@ -22,7 +22,7 @@ http:
         "email": "john@example.com",
         "phone": "0999999999",
         "notes": "Cliente actualizado",
-        "isActive": true
+        "isActive": false
       }
 
 settings:
