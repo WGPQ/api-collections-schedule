@@ -37,6 +37,40 @@ Variables principales:
 - `invitationToken`
 - `responsibleUserId`
 
+## Paginacion estandar
+
+Los endpoints `GET` de lista usan el mismo contrato:
+
+```json
+{
+  "items": [],
+  "meta": {
+    "page": 1,
+    "pageSize": 20,
+    "totalItems": 0,
+    "totalPages": 0,
+    "hasPreviousPage": false,
+    "hasNextPage": false
+  }
+}
+```
+
+Query params comunes:
+
+- `page`: default `1`
+- `pageSize`: default `20`
+
+Aplica a:
+
+- `Companies/List Companies`
+- `Company Users/List Users`
+- `Company Users/List Invitations`
+- `Clients/List Clients`
+- `Calendar/List Events`
+- `Calendar/List Availability Rules`
+- `Calendar/Get Slots`
+- `Audit Logs/List Audit Logs`
+
 ## Flujo recomendado
 
 1. Ejecuta `Auth/Register` si necesitas un usuario nuevo.
@@ -58,3 +92,4 @@ Los requests ya incluyen estos headers donde corresponde.
 - Esta coleccion esta alineada con el backend ASP.NET Core actual.
 - Algunos requests guardan variables automaticamente usando scripts `after-response`.
 - Si trabajas con HTTPS local, recuerda confiar el certificado de desarrollo de .NET o usar HTTP local.
+- Hay una copia vieja anidada en `api-collections-schedule/`; Bruno debe abrir la carpeta raiz actual, no esa copia.

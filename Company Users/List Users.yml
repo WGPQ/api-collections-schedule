@@ -11,9 +11,21 @@ http:
       value: Bearer {{accessToken}}
     - name: X-Company-Id
       value: '{{companyId}}'
+  params:
+    - name: page
+      value: '1'
+      type: query
+    - name: pageSize
+      value: '20'
+      type: query
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+docs: |-
+  Lista los usuarios de la empresa activa.
+
+  Respuesta paginada con `items` y `meta`.

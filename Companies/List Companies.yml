@@ -9,9 +9,21 @@ http:
   headers:
     - name: Authorization
       value: Bearer {{accessToken}}
+  params:
+    - name: page
+      value: '1'
+      type: query
+    - name: pageSize
+      value: '20'
+      type: query
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+
+docs: |-
+  Lista las empresas del usuario autenticado.
+
+  Respuesta paginada con `items` y `meta`.
