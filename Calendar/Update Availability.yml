@@ -1,0 +1,36 @@
+info:
+  name: Update Availability
+  type: http
+  seq: 13
+
+http:
+  method: PATCH
+  url: '{{baseUrl}}/api/calendar/availabilities/{{availabilityId}}'
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "title": "Updated availability",
+        "notes": "Adjusted schedule window",
+        "startAtUtc": "2026-05-24T10:00:00Z",
+        "endAtUtc": "2026-05-24T14:00:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#10b981"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Actualiza un evento de availability.

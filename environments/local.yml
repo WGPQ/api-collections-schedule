@@ -7,18 +7,18 @@ variables:
   - name: companyId
     value: eff8a9d6-a28b-4d38-b8f5-ea041c7bd401
   - name: clientId
-    value: ""
+    value: 2c9ed270-068b-4106-8952-996df020fe9b
   - name: appointmentId
     value: ""
   - name: breakId
     value: ""
   - name: internalBlockId
     value: ""
-  - name: ruleId
+  - name: availabilityId
     value: ""
   - name: companyUserId
     value: ""
   - name: invitationToken
     value: ""
   - name: responsibleUserId
-    value: ""
+    value: f28f95d9-7b0d-4215-ae80-5e24b5d2686e

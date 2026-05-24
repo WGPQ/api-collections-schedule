@@ -1,0 +1,46 @@
+info:
+  name: Create Availability
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: '{{baseUrl}}/api/calendar/availabilities'
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "title": "Morning availability",
+        "notes": "Main schedule window",
+        "startAtUtc": "2026-05-24T09:00:00Z",
+        "endAtUtc": "2026-05-24T13:00:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#34d399"
+      }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 200 && res.body && res.body.id) {
+          bru.setEnvVar("availabilityId", res.body.id)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Crea un evento de availability.
+
+  Usa la misma estructura base de un evento de calendario sin cliente asociado.

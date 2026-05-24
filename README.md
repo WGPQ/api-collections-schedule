@@ -32,7 +32,7 @@ Variables principales:
 - `appointmentId`
 - `breakId`
 - `internalBlockId`
-- `ruleId`
+- `availabilityId`
 - `companyUserId`
 - `invitationToken`
 - `responsibleUserId`
@@ -67,7 +67,7 @@ Aplica a:
 - `Company Users/List Invitations`
 - `Clients/List Clients`
 - `Calendar/List Events`
-- `Calendar/List Availability Rules`
+- `Calendar/List Availabilities`
 - `Calendar/Get Slots`
 - `Audit Logs/List Audit Logs`
 
