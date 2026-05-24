@@ -1,0 +1,7 @@
+info:
+  name: Companies
+  type: folder
+  seq: 2
+
+docs: |-
+  Gestion de empresas.

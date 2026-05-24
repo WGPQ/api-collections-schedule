@@ -1,0 +1,7 @@
+info:
+  name: Calendar
+  type: folder
+  seq: 5
+
+docs: |-
+  Agenda, disponibilidad y reservas.

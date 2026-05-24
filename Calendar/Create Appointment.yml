@@ -1,0 +1,43 @@
+info:
+  name: Create Appointment
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: '{{baseUrl}}/api/calendar/appointments'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "clientId": "{{clientId}}",
+        "title": "Consulta inicial",
+        "notes": "Reserva online",
+        "startAtUtc": "2026-05-24T15:00:00Z",
+        "endAtUtc": "2026-05-24T15:30:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#2563eb",
+        "isOnlineBooking": true
+      }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status >= 200 && res.status < 300 && res.body && res.body.id) {
+          bru.setEnvVar("appointmentId", res.body.id)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

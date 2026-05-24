@@ -1,0 +1,41 @@
+info:
+  name: Create Break
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: '{{baseUrl}}/api/calendar/breaks'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "title": "Almuerzo",
+        "notes": "Break interno",
+        "startAtUtc": "2026-05-24T18:00:00Z",
+        "endAtUtc": "2026-05-24T19:00:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#f59e0b"
+      }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status >= 200 && res.status < 300 && res.body && res.body.id) {
+          bru.setEnvVar("breakId", res.body.id)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,36 @@
+info:
+  name: Update Appointment
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: '{{baseUrl}}/api/calendar/appointments/{{appointmentId}}'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "clientId": "{{clientId}}",
+        "title": "Consulta inicial actualizada",
+        "notes": "Reprogramada",
+        "startAtUtc": "2026-05-24T16:00:00Z",
+        "endAtUtc": "2026-05-24T16:30:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#2563eb",
+        "isOnlineBooking": true,
+        "markCompleted": false
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

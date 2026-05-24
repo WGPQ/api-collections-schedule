@@ -1,0 +1,28 @@
+info:
+  name: Update Company
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: '{{baseUrl}}/api/companies/{{companyId}}'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Mi Empresa Actualizada",
+        "isActive": true
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,16 +1,8 @@
 opencollection: 1.0.0
 info:
-  name: "App Schedule"
-  type: workspace
+  name: App Schedule API
+  type: collection
 
-collections:
-  - name: "AppSchedule API"
-    path: "collections/AppSchedule API"
-
-envs:
-  - name: "Local"
-    path: "environments/local.yml"
-
-specs:
-
-docs: ''
+docs: |-
+  Coleccion Bruno/OpenCollection para App Schedule API.
+  Requiere variables de entorno como baseUrl, accessToken y companyId.

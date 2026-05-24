@@ -1,0 +1,41 @@
+info:
+  name: Create Internal Block
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: '{{baseUrl}}/api/calendar/internal-blocks'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "title": "Reunion interna",
+        "notes": "No agendar en este horario",
+        "startAtUtc": "2026-05-24T20:00:00Z",
+        "endAtUtc": "2026-05-24T21:00:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#ef4444"
+      }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status >= 200 && res.status < 300 && res.body && res.body.id) {
+          bru.setEnvVar("internalBlockId", res.body.id)
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

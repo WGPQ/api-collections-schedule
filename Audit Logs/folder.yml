@@ -1,0 +1,7 @@
+info:
+  name: Audit Logs
+  type: folder
+  seq: 6
+
+docs: |-
+  Auditoria funcional y HTTP.

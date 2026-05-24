@@ -1,0 +1,31 @@
+info:
+  name: Update Availability Rule
+  type: http
+  seq: 13
+
+http:
+  method: PUT
+  url: '{{baseUrl}}/api/calendar/availability-rules/{{ruleId}}'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "dayOfWeek": 1,
+        "startTime": "09:00:00",
+        "endTime": "18:00:00",
+        "isActive": true
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

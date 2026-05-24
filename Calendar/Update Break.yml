@@ -1,0 +1,33 @@
+info:
+  name: Update Break
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: '{{baseUrl}}/api/calendar/breaks/{{breakId}}'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "title": "Almuerzo extendido",
+        "notes": "Break actualizado",
+        "startAtUtc": "2026-05-24T18:00:00Z",
+        "endAtUtc": "2026-05-24T19:30:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#f59e0b"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

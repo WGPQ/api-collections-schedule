@@ -1,0 +1,19 @@
+info:
+  name: List Invitations
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: '{{baseUrl}}/api/company-users/invitations'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

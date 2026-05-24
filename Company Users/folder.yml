@@ -1,0 +1,7 @@
+info:
+  name: Company Users
+  type: folder
+  seq: 3
+
+docs: |-
+  Usuarios, roles e invitaciones.

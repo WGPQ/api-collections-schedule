@@ -1,9 +1,0 @@
-name: List Companies
-description: Obtener empresas del usuario autenticado.
-request:
-  method: GET
-  path: /api/companies
-  headers:
-    Authorization: Bearer {{accessToken}}
-responses:
-  success: 200

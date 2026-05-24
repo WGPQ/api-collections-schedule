@@ -1,0 +1,33 @@
+info:
+  name: Update Internal Block
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: '{{baseUrl}}/api/calendar/internal-blocks/{{internalBlockId}}'
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: X-Company-Id
+      value: '{{companyId}}'
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "responsibleUserId": "{{responsibleUserId}}",
+        "title": "Reunion interna actualizada",
+        "notes": "Horario bloqueado",
+        "startAtUtc": "2026-05-24T20:30:00Z",
+        "endAtUtc": "2026-05-24T21:30:00Z",
+        "timeZone": "America/Guayaquil",
+        "color": "#ef4444"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
